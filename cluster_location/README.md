@@ -1,8 +1,8 @@
 Each output image has .RAW and .PNG file. 
 
-`cluster_location_v1`: Contains the (20 mm, 50 calcs) large cluster and (10 mm, 50 calcs) small clusters. There are 5 phantoms where the individual calcification location is different, and the images are labelled with 0, 1, 2, 3, or 5. 
+`cluster_location_v1`: Contains the (20 mm, 50 calcs) large cluster and (10 mm, 50 calcs) small clusters. There are 5 phantoms where the individual calcification location is different, and the images are labelled with 0, 1, 2, 3, or 4. 
 
-`cluster_location_v2`: Contains the (10 mm, 30 calcs) left cluster and (10 mm, 40 calcs) right cluster. There are 5 phantoms where the individual calcification location is different, and the images are labelled with 0, 1, 2, 3, or 5. 
+`cluster_location_v2`: Contains the (10 mm, 30 calcs) left cluster and (10 mm, 40 calcs) right cluster. There are 5 phantoms where the individual calcification location is different, and the images are labelled with 0, 1, 2, 3, or 4. 
 
 
 ## [Cluster Location](https://github.com/marianqian/cluster_generation_data/blob/master/README.md#cluster-location)
