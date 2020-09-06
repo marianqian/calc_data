@@ -33,7 +33,7 @@ We also ran the same exact experiment but with **small** calcifications where th
 | 10 (142 vx) | 0.21±0.183        | 0.232±0.156     | 0.467±0.146      | 0.572±0.123       | 0.624±0.179      |
 | 20 (285 vx) | 0.071±0.042       | 0.275±0.174     | 0.189±0.103      | 0.431±0.152       | 0.407±0.191      |
 
-![](num_calcs_size_cluster/graphs/slide8_mixed_calcs_graph.png)
+![image](num_calcs_size_cluster/graphs/slide8_mixed_calcs_graph.png)
 
 #### Small
 | SMALL (3-5) | 10                | 20              | 30               | 40                | 50               |
@@ -42,7 +42,7 @@ We also ran the same exact experiment but with **small** calcifications where th
 | 10 (142 vx) | 0.184±0.125       | 0.344±0.135     | 0.402±0.122      | 0.451±0.089       | 0.516±0.096      |
 | 20 (285 vx) | 0.119±0.103       | 0.14±0.117      | 0.236±0.149      | 0.143±0.082       | 0.354±0.166      |
 
-![](num_calcs_size_cluster/graphs/slide8_small_calcs_graph.png)
+![image](num_calcs_size_cluster/graphs/slide8_small_calcs_graph.png)
 
 Most averages had 12 values, but for most of the 20 mm sized clusters, the CAD algorithm didn't detect 3-5 of the clusters. The highest values were with small calcs/10 mm/50 calcs. From the graph, it looks like the 5 mm with small calcs had higher confidence scores compared to the 5 mm mixed calcs consistently as well. The lowest scores were from mixed calcs/5 mm/10 calcs and small calcs/20 mm/10 calcs (for this one the CAD algorithm had a hard time detecting the clusters as well.) 
 
@@ -60,9 +60,9 @@ Experimented with varying size of cluster for 5 mm (71 voxels), 10 mm (142 voxel
 ### Data
 Image of 10 mm sized cluster. 
 
-![](num_calcs_size_cluster/num_calcs_size_cluster_v1/prj_30mm_2_cluster_malignant_10mm_1_full_0.7_25.raw.gz.raw.png)
+![image](num_calcs_size_cluster/num_calcs_size_cluster_v1/prj_30mm_2_cluster_malignant_10mm_1_full_0.7_25.raw.gz.raw.png)
 ### Results
-![](num_calcs_size_cluster/graphs/slide8_mixed_calcs_graph_presentation.png)
+![image](num_calcs_size_cluster/graphs/slide8_mixed_calcs_graph_presentation.png)
 
 | mm^3            |  |                   |                   |                   |                   |
 |-----------------|-------------------------------|-------------------|-------------------|-------------------|-------------------|
@@ -86,14 +86,14 @@ Because the smaller sized calcifications showed an increase in confidence scores
 
 10 mm sized cluster with 40 calcs. 
 
-![](nonuniform_cluster/graphs/10mm_40calcs_small_nonuniform.png)
+![image](nonuniform_cluster/graphs/10mm_40calcs_small_nonuniform.png)
 
 5 mm sized cluster with 40 calcs. 
 
-![](nonuniform_cluster/graphs/5mm_40calcs_small_nonuniform.png)
+![image](nonuniform_cluster/graphs/5mm_40calcs_small_nonuniform.png)
 
 ### Results
-![](nonuniform_cluster/graphs/slide8_mixed_nonuniform_calcs_graph.png)
+![image](nonuniform_cluster/graphs/slide8_mixed_nonuniform_calcs_graph.png)
 
 | 10 mm | col 1    | col 2       | col 3    | col 4    | 5 mm  | col 1    | col 2       | col 3    | col 4    |
 |-------|----------|-------------|----------|----------|-------|----------|-------------|----------|----------|
