@@ -16,14 +16,14 @@ Because the smaller sized calcifications showed an increase in confidence scores
 
 10 mm sized cluster with 40 calcs. 
 
-![image](nonuniform_cluster/graphs/10mm_40calcs_small_nonuniform.png)
+![image](../nonuniform_cluster/graphs/10mm_40calcs_small_nonuniform.png)
 
 5 mm sized cluster with 40 calcs. 
 
-![image](nonuniform_cluster/graphs/5mm_40calcs_small_nonuniform.png)
+![image](../nonuniform_cluster/graphs/5mm_40calcs_small_nonuniform.png)
 
 ### Results
-![image](nonuniform_cluster/graphs/slide8_mixed_nonuniform_calcs_graph.png)
+![image](../nonuniform_cluster/graphs/slide8_mixed_nonuniform_calcs_graph.png)
 
 | 10 mm | col 1    | col 2       | col 3    | col 4    | 5 mm  | col 1    | col 2       | col 3    | col 4    |
 |-------|----------|-------------|----------|----------|-------|----------|-------------|----------|----------|
