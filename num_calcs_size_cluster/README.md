@@ -1,24 +1,6 @@
+Each output image has a .RAW file and .PNG file.
 
+`num_calcs_size_cluster_v2`: Separated into `mixed/` and `small/` folders. Each image is labelled with the cluster size in voxels (5 mm = 71 vx, 10 mm = 142 vx, 20 mm = 285 vx) and the number of calcifications from 10, 20, 30, 40, and 50. Ex. `prj_30mm_2_cluster_malignant_only_142_10nm_m_full_0.7_25.raw.gz.raw.png` is image for 10 mm sized cluster with 10 MIXED calcifications (`m` for mixed or `s` for small right after the number of calcifications in the image name). 
 
-| mm^3            | Num calcs   |             |             |             |                                                                        |
-| --------------- | ----------- | ----------- | ----------- | ----------- | ---------------------------------------------------------------------- |
-| Size of cluster | 10          | 20          | 30          | 40          | 50                                                                     |
-| 5 (71 vx)       | 0.056887127 | 0.104886264 | 0.07405398  | 0.099108025 | 0.096362464                                                            |
-| 10 (142 vx)     | 0.05602796  | 0.468650311 | 0.308111638 | 0.257900625 | 0.393199652                                                            |
-| 20 (285 vx)     | 0           | 0.088635035 | 0           | 0.362236261 | 0.692064523697 (not counted in graph as outier)                        |
-| 1               |             |             |             |             |                                                                        |
-| 5 (71 vx)       | 0.018788677 | 0.106407657 | 0.116770208 | 0.053639639 | 0.099187247                                                            |
-| 10 (142 vx)     | 0.039953906 | 0.065078937 | 0.205674797 | 0.486473322 | 0.333029389                                                            |
-| 20 (285 vx)     | 0           | 0.236876726 | 0.40355742  | 0.273835123 | 0.244947866                                                            |
-| 2               |             |             |             |             |                                                                        |
-| 5 (71 vx)       | 0.216874242 | 0.090277083 | 0.081755765 | 0.036008392 | 0.073067717                                                            |
-| 10 (142 vx)     | 0.096151851 | 0.129232824 | 0.393985778 | 0.251083136 | 0.441211224                                                            |
-| 20 (285 vx)     | 0.063525707 | 0.138343737 | 0.146863222 | 0.143113181 | 0.301585078                                                            |
-| 3               |             |             |             |             |                                                                        |
-| 5 (71 vx)       | 0.075171351 | 0.037759751 | 0.07948292  | 0.091788918 | 0.05914256                                                             |
-| 10 (142 vx)     | 0.023329563 | 0.308634728 | 0.124841258 | 0.220704779 | 0.459721148                                                            |
-| 20 (285 vx)     | 0           | 0.076781414 | 0           | 0.254817128 | 0.318397105                                                            |
-| 4               |             |             |             |             |                                                                        |
-| 5 (71 vx)       | 0.102960855 | 0.230610937 | 0.102871142 | 0.12666449  | 0.067681476                                                            |
-| 10 (142 vx)     | 0.309486151 | 0.261789501 | 0.243857563 | 0.440784574 | 0.284140795                                                            |
-| 20 (285 vx)     | 0.029512633 | 0.08436054  | 0           | 0.110592023 | 0.198714361                                                            |
+`num_calcs_size_cluster_v1` **old experiment**: There are 5 image for each size (5, 10 and 20 mm), labelled with the cluster size and 1, 2, 3, 4, or no number in the filename. In each image, there are 5 clusters with each cluster having different number of calcifications with the same cluster size.  
+
