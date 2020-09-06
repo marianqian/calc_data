@@ -1,8 +1,14 @@
+Each output image has .RAW and .PNG file. 
 
+`calc_density_v2`: Separated into folders with the density setting. In each folder, there are 10 different images labelled with number 0 to 9, indicating the 10 different breast phantoms. The clusters were placed in the same location of 3 rows by 5 columns, and the averages were only based on the clusters in the middle row. The difference between the phantoms is that the individual calc positions within each cluster is different. Each cluster is of 10 mm and 40 mixed calcs. 
+
+`calc_density_v3` **uniform phantom**: Contains one uniform phantom with clusters of 10 mm and 40 calcs placed in 3 rows by 5 columns. Filenames have density setting it was ran at 1.5 to 2.0. This folder also contains the zipped uniform phantom file. The `images/` folder has the CAD output for 1.2, 1.3 and 1.6 density settings of this uniform phantom. 
+
+`calc_density_v1` **old experiment**: Separated into `mixed/` and `small/` folders. One phantom with clusters with 10 mm and 40 calcs placed in 3 rows by 5 columns. The filenames have the density setting it has ran at 1.5 to 2.0. 
 
 From the README.md
 
-# [Experiments focusing on brightness of the calcification (location, density, calcification size)] (https://github.com/marianqian/cluster_generation_data#experiments-focusing-on-brightness-of-the-calcification-location-density-calcification-size)
+# [Experiments focusing on brightness of the calcification (location, density, calcification size)](https://github.com/marianqian/cluster_generation_data#experiments-focusing-on-brightness-of-the-calcification-location-density-calcification-size)
 
 We saw through our experiments that calcifications that were too bright would lead to a decrease in confidence scores possibly because they are too unrealistic. This was shown through changing the density settings in MC-GPU (lower densities had higher scores) and increasing the size of calcifications (smaller calc sizes had higher scores). Clusters near the chest wall also had higher scores which could be due to change in brightness (discussed more in detail below). 
 
@@ -16,7 +22,7 @@ Experimented with the density setting in MC-GPU to see whether the brightness ha
 3. Preprocessing: Default values (25th to 100th percentile, masked 400,000, took values greater than 0.7) 
 
 ### Results
-![image](../calc_density/images/ellip_calc_1.6.png)
+![image](../calc_density/images/calc_density_graphs.png)
 
 |     | col 1       | col 2       | col 3       | col 4       | col 5       |
 |-----|-------------|-------------|-------------|-------------|-------------|
