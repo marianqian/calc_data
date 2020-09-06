@@ -1,4 +1,51 @@
 # Results of Modeling Malignant and Benign Clusters 
+# Table of Contents
+
+* [Experiments changing calcification number and cluster size](https://github.com/marianqian/cluster_generation_data#calcification-number-and-cluster-size). Images in [`num_calcs_size_cluster`](https://github.com/marianqian/cluster_generation_data/tree/master/num_calcs_size_cluster).
+    
+    * [Version 2](https://github.com/marianqian/cluster_generation_data#changing-number-of-calcification-and-size-of-cluster-version-2): Most recent with averages computed with more data points. Images in [`num_calcs_size_cluster_v2`](https://github.com/marianqian/cluster_generation_data/tree/master/num_calcs_size_cluster/num_calcs_size_cluster_v2).
+    
+    * [Version 1](https://github.com/marianqian/cluster_generation_data#changing-size-of-calcification-and-size-of-cluster-version-1-old): Older version of experiment given during presentation. Images in [`num_calcs_size_cluster_v1`](https://github.com/marianqian/cluster_generation_data/tree/master/num_calcs_size_cluster/num_calcs_size_cluster_v1).
+
+* [Modeling nonuniform clusters](https://github.com/marianqian/cluster_generation_data#modeling-non-uniform-clusters). Images in [`nonuniform_cluster`](https://github.com/marianqian/cluster_generation_data/tree/master/nonuniform_cluster). 
+
+* [Experiments focusing on brightness of the calcification (location, density, calcification size)](https://github.com/marianqian/cluster_generation_data#experiments-focusing-on-brightness-of-the-calcification-location-density-calcification-size)
+
+* Calcification Density. Images in [`calc_density`](https://github.com/marianqian/cluster_generation_data/tree/master/calc_density).
+  
+    * [Version 2](https://github.com/marianqian/cluster_generation_data#calcification-density-version-2): Most up to date version with averages computed with more data points. Images in [`calc_density_v2`](https://github.com/marianqian/cluster_generation_data/tree/master/calc_density/calc_density_v2).
+    
+    * [Version 3](https://github.com/marianqian/cluster_generation_data#calcification-density-version-3-tried-some-experiments): With uniform phantom. Images in [`calc_density_v3`](https://github.com/marianqian/cluster_generation_data/tree/master/calc_density/calc_density_v3).
+    
+    * [Version 1](https://github.com/marianqian/cluster_generation_data#calcification-density-version-1-old): Older version of experiment given during presentation. Images in [`calc_density_v1`](https://github.com/marianqian/cluster_generation_data/tree/master/calc_density/calc_density_v1). 
+    
+* [Cluster Location](https://github.com/marianqian/cluster_generation_data#cluster-location). Images in [`cluster_location`](https://github.com/marianqian/cluster_generation_data/tree/master/cluster_location). The version folders inside are used for the same experiment, but inside each folder are different cluster size/calc number configurations. 
+
+* Calcification Size. Images in [`calc_size`](https://github.com/marianqian/cluster_generation_data/tree/master/calc_size).
+
+    * [Version 1](https://github.com/marianqian/cluster_generation_data#calcification-size-version-1): With a variety of different configurations of cluster size and calcification number. Images in [`calc_size_v1`](https://github.com/marianqian/cluster_generation_data/tree/master/calc_size/calc_size_v1).
+    
+    * [Version 2](https://github.com/marianqian/cluster_generation_data#calcification-size-version-2-double-checking): With only 10 mm for 40 and 50 calcs. Images in [`calc_size_v2`](https://github.com/marianqian/cluster_generation_data/tree/master/calc_size/calc_size_v2). 
+
+* [Calcification Shape](https://github.com/marianqian/cluster_generation_data#calcification-shape). Images in [`calc_shape`](https://github.com/marianqian/cluster_generation_data/tree/master/calc_shape). 
+
+* [Linear Clusters](https://github.com/marianqian/cluster_generation_data#linear-clusters). Images in [`linear_cluster`](https://github.com/marianqian/cluster_generation_data/tree/master/linear_cluster). 
+
+* [Mass](https://github.com/marianqian/cluster_generation_data#mass). Images in [`mass`](https://github.com/marianqian/cluster_generation_data/tree/master/mass). 
+
+* CAD output and images of other studies who had calcifications/masses in [`CAD_output`](https://github.com/marianqian/cluster_generation_data/tree/master/CAD_output). 
+
+    * Hologic images of breasts with masses from Dr. Zahra Ghanian. Images in [`mass_zahra_hologic`](https://github.com/marianqian/cluster_generation_data/tree/master/CAD_output/mass_zahra_hologic).
+    
+    * Hologic images of inserted calcifications made from Calcium Oxalate and Hydroxyapitate from Dr. Andrey Makeev. Images in [`co_ha_small_calcs_hologic`](https://github.com/marianqian/cluster_generation_data/tree/master/CAD_output/co_ha_small_calcs_hologic).
+    
+    * Hologic images of inserted calcs from Dr. Lynda Ikejimba. Images in [`inserted_calcs_lynda_hologic`](https://github.com/marianqian/cluster_generation_data/tree/master/CAD_output/inserted_calcs_lynda_hologic).
+    
+    * Hologic images of inserted calcs from Dr. Zahra Ghanian. Images from [`inserted_calcs_zahra_hologic`](https://github.com/marianqian/cluster_generation_data/tree/master/CAD_output/inserted_calcs_zahra_hologic).
+    
+    * ROI images of simulated masses with spiculations from Nick Neirotti and a microcalcification cluster. Images in [`roi`](https://github.com/marianqian/cluster_generation_data/tree/master/CAD_output/roi). 
+    
+
 # Calcification Number and Cluster Size
 Changing the number of calcifications, size of cluster, and size of calcifications were parameters we focused on the most. These parameters are the parameters we saw had the most consistent confidence scores and effected the confidence scores more drastically. 
 
@@ -371,10 +418,4 @@ Other factors that could influence malignancy confidence score:
 * Using scatter vs. non-scatter image. 
 * Changing the pixel size on the detector. (If pixel size was larger, would that increase malignancy score?)
 * Changing preprocess values for the MC-GPU output images. (For these experiments, only used default (25th to 100th percentile, masked 400,000, took values greater than 0.7).
-
-
-
-# Other CAD outputs 
-ROI 
-the other zahara images
 
