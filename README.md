@@ -4,7 +4,10 @@
 ### Results
 
 # Results of Modeling Malignant and Benign Clusters 
-## Changing Size of Calcification and Size of Cluster (Version 2) 
+# Calcification Number and Cluster Size
+Changing the number of calcifications, size of cluster, and size of calcifications were parameters we focused on the most. These parameters are the parameters we saw had the most consistent confidence scores and effected the confidence scores more drastically. 
+
+## Changing Number of Calcification and Size of Cluster (Version 2) 
 
 ### Description
 (slide 8 in presentation) 
@@ -172,48 +175,203 @@ Graph only shows values for the **mixed** clusters.
 |     10   mm - 40 calcs (mixed, 3-9)    |     0.498±0.056    |     0.421±0.074    |     0.397±0.09    |     0.406±0.09    |     0.365±0.067    |     0.347±0.082    |
 | 10 mm - 40 calcs (small, 3-5) | 0.346±0.222 | 0.565±0.154 | 0.434±0.26 | 0.347±0.082 | 0.609±0.056 | 0.629±0.11 |
 
-For the mixed calcs, lower density settings had higher malignancy scores. For the small clusters, they had higher scores for a higher density setting, which could possibly be because the lower settings did not allow the smaller calcs to show up bright enough. 
+For the mixed calcs, lower density settings had higher malignancy scores. For the small clusters, they had higher scores for a higher density setting, which could possibly be because the lower settings did not allow the smaller calcs to show up bright enough. The error bars were **not** standard deviation, but was the average of the maximum and minimum values. 
 
+Some bounding boxes had really high malignancy scores (0.8) near the chest wall, and it included several clusters as well. Might be that with a mass -> more malignant, but will have to investigate further. 
 
 ## Cluster Location
-thought that could be due to 
-
-we also tried changing the location of the cluster, and surprisingly saw that clusters closer to the chest wall had a higher confidence score as shown by the blue bars. 
-
-because clusters near the chest wall are not as common as clusters near the nipple, we thought that there might be other factors that contributed to its higher score, one of them being that since the breast could be thicker near the chest wall, the clusters appear dimmer which could then lead to a higher confidence score. because of that, we still plan  to explore further before coming to a conclusion. 
-
 ### Description
+Changed the cluster location to either near the chest wall or to the nipple. Tested with 4 different configurations of cluster size and calc number: (10 mm, 50 calcs), (10 mm, 40 calcs), (10 mm, 30 calcs), (20 mm, 50 calcs). Below shows the configuration of the clusters, and the averages were across 4 values. Images located [here](https://github.com/marianqian/cluster_generation_data/tree/master/cluster_location). 
 ### Specifications
 1. Calc size: varied between 3-9 voxels (mixed) 
-2. Density in MC-GPU simulation: 1.5-2.0 (varied)
+2. Density in MC-GPU simulation: 1.6
 3. Preprocessing: Default values (25th to 100th percentile, masked 400,000, took values greater than 0.7) 
 ### Data
+Image from `cluster_location_v1`, contains the (20 mm, 50 calcs) large cluster and (10 mm, 50 calcs) small clusters. 
+
 ![image](cluster_location/cluster_location_v1/prj_30mm_2_cluster_malignant_location_0_full_0.7_25.raw.gz.raw.png)
 
+Image from `cluster_location_v2`, contains the (10 mm, 30 calcs) left cluster and (10 mm, 40 calcs) right cluster.
+
+![image](cluster_location/cluster_location_v2/prj_30mm_2_cluster_malignant_location_2_0_full_0.7_25.raw.gz.raw.png)
+
+### Results
+![graph](cluster_location/cluster_location_graph_presentation.png)
+
+| mm^3 (mixed)    | mean+std    |             |                    |
+|-----------------|-------------|-------------|--------------------|
+| Size of cluster | chest wall  | nipple      |     Mixed (3-9)    |
+| 10 mm - 40      | 0.609±0.073 | 0.359±0.14  |     0.188±0.15     |
+| 10 mm - 50      | 0.454±0.088 | 0.211±0.026 |     0.374±0.087    |
+| 10 mm - 30      | 0.309±0.131 | 0.174±0.048 |     0.169±0.089    |
+| 20 mm - 50      | 0.442±0.18  | 0.289±0.162 |     0.191±0.191    |
+
+Clusters closer to the chest wall had a higher malignancy scores, surprisingly. Because clusters near the chest wall are not as common as clusters near the nipple, there might be other factors that contribute to its higher score. One potential reason could be that since the breast could be thicker near the chest wall, the clusters appear dimmer, which then could lead to a higher confidence score. Still not a confirmed conclusion, but because from other experiments we saw that dimmer clusters did have higher scores, this could be a possibility.
+
+## Calcification Size (version 1) 
+### Description
+Tested calcification sized of 3-9 voxels (mixed), 3-5 voxels (small), and 7-9 voxels (large) with 6 different configurations of cluster size and calc number: (5 mm, 50 calcs), (5 mm, 40 calcs), (10 mm, 50 calcs), (10 mm, 40 calcs), (20 mm, 50 calcs), (20 mm, 40 calcs). Phantoms contained only one cluster size with one row of 40 calcs and another for 50 calcs. In that row, there would be 3 clusters, one for mixed, large, and small. Below shows the configuration of the clusters, and the averages were across 5 values. Images located [here](https://github.com/marianqian/cluster_generation_data/tree/master/calc_size/calc_size_v1). The images are separated based on cluster size. 
+
+### Specifications
+1. Calc size: varied between 3-9 voxels (mixed), 3-5 voxels (small), 7-9 voxels (large)
+2. Density in MC-GPU simulation: 1.6
+3. Preprocessing: Default values (25th to 100th percentile, masked 400,000, took values greater than 0.7) 
+
+### Data
+
+Image for 10 mm cluster. Top row has 40 calcs, bottom row has 50 calcs. The order of the clusters are mixed, large, and small from left to right. 
+
+![image](calc_size/calc_size_v1/10mm/prj_30mm_2_cluster_malignant_calc_size_10mm_1_full_0.7_25.raw.gz.raw.png)
+
 ### Results
 
+![image](calc_size/calc_size_graph_presentation.png)
 
-## Calcification Size
-we also varied the size of the calcifications, mainly testing the difference between small, large, and mixed sizes. we saw that smaller calcifications had increased confidence scores for 5 and 10 mm cubed sized clusters, and the only scores for the 10 mm sized clusters are shown in the bar graph for clarity. the blue represents the confidence scores of the smaller calcs. 
+|     mm^3               |                      |                     |                    |
+|------------------------|----------------------|---------------------|--------------------|
+|     Size of cluster    |     Smaller (3-5)    |     Larger (7-9)    |     Mixed (3-9)    |
+|     5 mm - 40          |     0.369±0.151      |     0.078±0.019     |     0.188±0.15     |
+|     10 mm - 40         |     0.669±0.052      |     0.318±0.088     |     0.374±0.087    |
+|     20 mm - 40         |     0.128±0.158      |     0.144±0.028     |     0.169±0.089    |
+|     5 mm - 50          |     0.323±0.159      |     0.072±0.008     |     0.191±0.191    |
+|     10 mm - 50         |     0.485±0.169      |     0.354±0.097     |     0.411±0.068    |
+|     20 mm - 50         |     0±0.159          |     0.27±0.082      |     0.287±0.156    |
 
-one reason that could be behind why the smaller sized calcs had a higher confidence score is how bright it shows up in the simulated image as the larger calcs show up alot brighter which then could be unrealistic to the cad algorithm. 
+Smaller calcifications had increased confidence scores for 5 and 10 mm sized clusters. Only scores for the 10 mm sized clusters are shown in the bar graph for clarity. The blue represents the confidence scores of the smaller calcs. One reason that could be behind why the smaller sized calcs had a higher confidence score is how bright it shows up in the simulated image. Because they are smaller, they appear dimmer, while the larger calcs show up much brighter, causing them to be unrealistic to the CAD algorithm. 
 
-# not related
-## Calcification Shape
-## Linear Clusters
-we plan to experiment with the linear shape of the clusters and place calcification clusters near simulated masses as the next steps to see whether these factors also influence the malignancy confidence scores.
-
-
-## Mass
-
+## Calcification Size (version 2) double checking 
 ### Description
+Tested calcification sized again of 3-9 voxels (mixed), 3-5 voxels (small), and 7-9 voxels (large), this time with 2 different configurations of cluster size and calc number: (10 mm, 50 calcs), (10 mm, 40 calcs). 5 different phantoms were used, where each phantom contained only type of cluster (same calc number and calc size). Because the breast phantom changed, the background also changed. Each phantom had 15 clusters, 3 rows by 5 columns. The averages listed below are based off the 5 values in the middle row. Images located [here](https://github.com/marianqian/cluster_generation_data/tree/master/calc_size/calc_size_v2). The images are separated based on calcification size. 
+
+### Specifications
+1. Calc size: varied between 3-9 voxels (mixed), 3-5 voxels (small), 7-9 voxels (large)
+2. Density in MC-GPU simulation: 1.6
+3. Preprocessing: Default values (25th to 100th percentile, masked 400,000, took values greater than 0.7) 
+
+### Data
+Image of breast phantom #1 with 10 mm sized cluster of 40 **large** calcifications.
+
+![image](calc_size/calc_size_v2/large/prj_30mm_2_cluster_malignant_calc_size_v2_p1_40_l_full_0.7_25.raw.gz.raw.png)
+
+### Results
+Mean and Standard Deviation. p0-p5 are for the different breast phantom for different backgrounds. 
+| mm^3            |               |              |             |
+|-----------------|---------------|--------------|-------------|
+| Size of cluster | Smaller (3-5) | Larger (7-9) | Mixed       |
+| p0              |               |              |             |
+| 10 mm - 40      | 0.669±0.052   | 0.318±0.088  | 0.374±0.087 |
+| 10 mm - 50      | 0.485±0.169   | 0.354±0.097  | 0.411±0.068 |
+| p1              |               |              |             |
+| 10 mm - 40      | 0.523±0.229   | 0.391±0.135  | 0.363±0.061 |
+| 10 mm - 50      | 0.433±0.251   | 0.268±0.074  | 0.471±0.123 |
+| p2              |               |              |             |
+| 10 mm - 40      | 0.55±0.256    | 0.307±0.115  | 0.343±0.117 |
+| 10 mm - 50      | 0.745±0.082   | 0.422±0.066  | 0.427±0.102 |
+| p3              |               |              |             |
+| 10 mm - 40      | 0.542±0.101   | 0.339±0.031  | 0.44±0.063  |
+| 10 mm - 50      | 0.374±0.189   | 0.342±0.036  | 0.404±0.061 |
+| p4              |               |              |             |
+| 10 mm - 40      | 0.422±0.177   | 0.359±0.089  | 0.427±0.082 |
+| 10 mm - 50      | 0.516±0.137   | 0.32±0.093   | 0.461±0.123 |
+
+The smaller calcifications continued to show higher confidence scores. 
+
+# Other experiments 
+## Calcification Shape
+### Description
+Changed calcification shape to be rod-like instead of spherical. Tested with 4 configurations of cluster size and calc number: (20 mm, 50 calcs), (10 mm, 50 calcs), (10 mm, 40 calcs), (10 mm, 30 calcs). Each phantom contained three rows: 1st row for spherical, 2nd row for rod-like, and 3rd row for rod-like and spherical calcifications. The order of the clusters left to right are: (20 mm, 50 calcs), (10 mm, 50 calcs), (10 mm, 40 calcs), (10 mm, 30 calcs). The averages listed below are based off of 5 values. Images located [here](https://github.com/marianqian/cluster_generation_data/tree/master/calc_shape). 
+
 ### Specifications
 1. Calc size: varied between 3-9 voxels (mixed) 
-2. Density in MC-GPU simulation: 1.5-2.0 (varied)
+2. Density in MC-GPU simulation: 1.6
 3. Preprocessing: Default values (25th to 100th percentile, masked 400,000, took values greater than 0.7) 
 ### Data
+
+Image of clusters with different calcification shapes. From left to right: (20 mm, 50 calcs), (10 mm, 50 calcs), (10 mm, 40 calcs), (10 mm, 30 calcs). Rows: 1st is spherical, 2nd is rod-like, 3rd is both. 
+
+![image](calc_shape/prj_30mm_2_cluster_malignant_calc_shape_0_full_0.7_25.raw.gz.raw.png)
+
+### Results
+Mean and Standard Deviation. 
+| mm^3 (mixed)    | mean+std    |             |             |
+|-----------------|-------------|-------------|-------------|
+| Size of cluster | spherical   | rod like    | both        |
+| 10 mm - 30      | 0.289±0.183 | 0.518±0.09  | 0.381±0.1   |
+| 10 mm - 40      | 0.479±0.074 | 0.389±0.176 | 0.272±0.048 |
+| 10 mm - 50      | 0.443±0.093 | 0.5±0.077   | 0.349±0.161 |
+| 20 mm - 50      | 0.519±0.124 | 0.23±0.14   | 0.471±0.208 |
+
+Sometimes the spherical calcs have a higher score and other times the rod-like calcifications have a higher score. No definite conclusion about whether having rod-like clusters would increase malignancy scores. 
+
+## Linear Clusters
+### Description
+Tested whether changing the cluster shape into a linear pattern would influence malignancy scores. Tried several different configurations listed below:  
+
+* **(3-7_linear_15-30)** Linear cluster, 3-7 voxel sized calcs, calcs had to be min 15 and max 30 pixels away from the center line. 
+* **(3-7_linear_15-30_same_cluster)** Linear cluster, 3-7 voxel sized calcs, calcs had to be min 15 and max 30 pixels away from the center line. **the same cluster with same calc locations was placed throughout the phantom**
+* **(3-9_linear_0-15)** Linear cluster, 3-9 voxel sized calcs, calcs had to be min 0 and max 15 pixels away from the center line.
+* **(3-9_linear_5-20)** Linear cluster, 3-9 voxel sized calcs, calcs had to be min 5 and max 20 pixels away from the center line. 
+* **(3-9_linear_15-30)** Linear cluster, 3-9 voxel sized calcs, calcs had to be min 15 and max 30 pixels away from the center line. 
+* **(3-7_random)** Random cluster, 3-7 voxel sized calcs
+* **(3-9_random)** Random cluster, 3-9 voxel sized calcs
+
+In each of these configurations, there were phantoms for the following: (10 mm, 20 calcs), (10 mm, 30 calcs), (10 mm, 40 calcs), (10 mm, 50 calcs), (20 mm, 50 calcs). Each phantom one configuration of 3 rows by 4 columns of clusters. The averages of each configuration was based on the 4 clusters in the middle row. Images located [here](https://github.com/marianqian/cluster_generation_data/tree/master/linear_cluster). 
+
+### Specifications
+1. Calc size: varied between 3-9 voxels (mixed) and 3-7 voxels 
+2. Density in MC-GPU simulation: 1.6
+3. Preprocessing: Default values (25th to 100th percentile, masked 400,000, took values greater than 0.7) 
+
+### Data
+Image of linear cluster of 10 mm and 20 calcs. The calcs were 3-7 voxel sized and had to be min 15 pixels and max 30 pixels away from the center line. 
+
+![image](linear_cluster/3-7_linear_15-30/prj_30mm_2_linear_cluster_142_20nm_1_full_0.7_25.raw.gz.raw.png)
+
 ### Results
 
+| mm^3            | mean+std         |                               |                 |                 |                  |              |              |
+|-----------------|------------------|-------------------------------|-----------------|-----------------|------------------|--------------|--------------|
+| Size of cluster | 3-7_linear_15-30 | 3-7_linear_15-30_same_cluster | 3-9_linear_0-15 | 3-9_linear_5-20 | 3-9_linear_15-30 | 3-7_random   | 3-9_random   |
+| 10 mm - 20      | 0.367±0.065      | 0.391±0.065                   | 0.145±0.029     | 0.166±0.027     | 0.212±0.076      | 0.447±0.078  | 0.405±0.077  |
+| 10 mm - 30      | 0.501±0.032      | 0.393±0.072                   | 0.124±0.045     | 0.188±0.038     | 0.253±0.057      | 0.509±0.068  | 0.374±0.058  |
+| 10 mm - 40      | 0.518±0.082      | 0.455±0.054                   | 0.115±0.014     | 0.171±0.046     | 0.264±0.055      | 0.599±0.056  | 0.469±0.032  |
+| 10 mm - 50      | 0.525±0.046      | 0.51±0.033                    | 0.059±0.019     | 0.18±0.055      | 0.371±0.06       | 0.734±0.023  | 0.545±0.036  |
+| 20 mm - 50      | 0.499±0.127      | 0.481±0.125                   | 0.118±0.038     | 0.196±0.058     | 0.215±0.059      | Not enough data | Not enough data |
 
+### Future Steps 
+The linear clusters didn't have as high malignancy scores compared to the random clusters, but there was also variability in this experiment. Some future steps: 
+1. Location of the linear cluster might impact the score
+2. Make the linear clusters that are tightly clustered together and have more calcifications to be less bright. 
+3. Make linear clusters longer and more sparsely distributed. 
+4. Vary the length, number of calcifications, and how dense the linear cluster is to see how well the CAD algorithm performs. 
+5. Preprocessing might make a difference (the ones for this experiment was with the default values). 
 
+## Mass
+### Description
+For CAD algorithm, tested simulated spiculated masses created by Nick Neirotti. Images located [here](https://github.com/marianqian/cluster_generation_data/tree/master/linear_cluster). 
+
+### Specifications
+1. Density in MC-GPU simulation: 1.06
+2. Preprocessing: Default values (25th to 100th percentile, masked 400,000, took values greater than 0.7) 
+
+### Data
+Simulated processed image.
+![image](mass/inserted_mass_1.6_mcgpu_fredenberg.png) 
+
+CAD output 
+![image](mass/CAD_inserted_mass_1.6_mcgpu_fredenberg.png) 
+
+The highest two lesions had very noticable spiculations. and the highest scoring mass was slightly deformed/irregularly shaped. This could lead to how having lesions that are not perfectly spheres could possibly increase the malignancy confidence score. 
+
+# Future Steps
+Other factors that could influence malignancy confidence score:
+* Using scatter vs. non-scatter image. 
+* Changing the pixel size on the detector. (If pixel size was larger, would that increase malignancy score?)
+* Changing preprocess values for the MC-GPU output images. (For these experiments, only used default (25th to 100th percentile, masked 400,000, took values greater than 0.7).
+
+For masses to see influence on confidence score:
+* Place masses in same location but in different phantoms.
+* Place masses in uniform phantom.
+* Populate phantom with perfect sphere masses.
+* Take masses and replicate them across a phantom so the only difference is the location. 
 
