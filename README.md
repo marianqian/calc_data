@@ -343,7 +343,7 @@ The linear clusters didn't have as high malignancy scores compared to the random
 
 ## Mass
 ### Description
-For CAD algorithm, tested simulated spiculated masses created by Nick Neirotti. Images located [here](https://github.com/marianqian/cluster_generation_data/tree/master/linear_cluster). 
+For CAD algorithm, tested simulated spiculated masses created by Nick Neirotti. Images located [here](https://github.com/marianqian/cluster_generation_data/tree/master/mass). 
 
 ### Specifications
 1. Density in MC-GPU simulation: 1.06
