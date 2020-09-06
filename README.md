@@ -116,7 +116,7 @@ Experimented with the density setting in MC-GPU to see whether the brightness ha
 3. Preprocessing: Default values (25th to 100th percentile, masked 400,000, took values greater than 0.7) 
 
 ### Results
-![image](calc_density/calc_density_graphs.png)
+![image](calc_density/images/calc_density_graphs.png)
 
 |     | col 1       | col 2       | col 3       | col 4       | col 5       |
 |-----|-------------|-------------|-------------|-------------|-------------|
@@ -142,11 +142,11 @@ We tried using another breast phantom made by Dr. Andrey Makeev of a uniform ell
 ## Data
 Generated image output of 1.6 density. 15 clusters, 10 mm and 40 calcifications. 
 
-![image](calc_density/ellip_calc_1.6.png)
+![image](calc_density/images/ellip_calc_1.6.png)
 
 Output of the CAD algorithm
 
-![image](calc_density/ellip_calc_1.6_cad_output_all.png)
+![image](calc_density/images/ellip_calc_1.6_cad_output_all.png)
 
 We decided to use this approach so that the background would be uniform, and that would reduce the variability between the clusters, which would hopefully allow for less variation in the confidence scores from the CAD algorithm. However, we did not proceed with this approach because the algorithm gave a large range of values for several clusters that visually looked similar. 
 
@@ -162,7 +162,7 @@ An older experiment testing changing the density in MC-GPU. The density values w
 ### Results
 
 Graph only shows values for the **mixed** clusters. 
-![image](calc_density/calc_density_graphs_presentation.png)
+![image](calc_density/images/calc_density_graphs_presentation.png)
 
 
 |              Density   g/cm^3    |             1.5    |             1.6    |            1.7    |            1.8    |             1.9    |               2    |
