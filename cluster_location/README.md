@@ -5,7 +5,7 @@ Each output image has .RAW and .PNG file.
 `cluster_location_v2`: Contains the (10 mm, 30 calcs) left cluster and (10 mm, 40 calcs) right cluster. There are 5 phantoms where the individual calcification location is different, and the images are labelled with 0, 1, 2, 3, or 5. 
 
 
-## (Cluster Location](https://github.com/marianqian/cluster_generation_data/blob/master/README.md#cluster-location)
+## [Cluster Location](https://github.com/marianqian/cluster_generation_data/blob/master/README.md#cluster-location)
 ### Description
 Changed the cluster location to either near the chest wall or to the nipple. Tested with 4 different configurations of cluster size and calc number: (10 mm, 50 calcs), (10 mm, 40 calcs), (10 mm, 30 calcs), (20 mm, 50 calcs). Below shows the configuration of the clusters, and the averages were across 4 values. Images located [here](https://github.com/marianqian/cluster_generation_data/tree/master/cluster_location). 
 ### Specifications
@@ -15,14 +15,14 @@ Changed the cluster location to either near the chest wall or to the nipple. Tes
 ### Data
 Image from `cluster_location_v1`, contains the (20 mm, 50 calcs) large cluster and (10 mm, 50 calcs) small clusters. 
 
-![image](cluster_location/cluster_location_v1/prj_30mm_2_cluster_malignant_location_0_full_0.7_25.raw.gz.raw.png)
+![image](../cluster_location/cluster_location_v1/prj_30mm_2_cluster_malignant_location_0_full_0.7_25.raw.gz.raw.png)
 
 Image from `cluster_location_v2`, contains the (10 mm, 30 calcs) left cluster and (10 mm, 40 calcs) right cluster.
 
-![image](cluster_location/cluster_location_v2/prj_30mm_2_cluster_malignant_location_2_0_full_0.7_25.raw.gz.raw.png)
+![image](../cluster_location/cluster_location_v2/prj_30mm_2_cluster_malignant_location_2_0_full_0.7_25.raw.gz.raw.png)
 
 ### Results
-![graph](cluster_location/graphs/cluster_location_graph_presentation.png)
+![graph](../cluster_location/graphs/cluster_location_graph_presentation.png)
 
 | mm^3 (mixed)    | mean+std    |             |                    |
 |-----------------|-------------|-------------|--------------------|
