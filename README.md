@@ -369,3 +369,7 @@ For masses to see influence on confidence score:
 * Populate phantom with perfect sphere masses.
 * Take masses and replicate them across a phantom so the only difference is the location. 
 
+# Other CAD outputs 
+ROI 
+the other zahara images
+
