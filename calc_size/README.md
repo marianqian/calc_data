@@ -17,11 +17,11 @@ Tested calcification sized of 3-9 voxels (mixed), 3-5 voxels (small), and 7-9 vo
 
 Image for 10 mm cluster. Top row has 40 calcs, bottom row has 50 calcs. The order of the clusters are mixed, large, and small from left to right. 
 
-![image](calc_size/calc_size_v1/10mm/prj_30mm_2_cluster_malignant_calc_size_10mm_1_full_0.7_25.raw.gz.raw.png)
+![image](../calc_size/calc_size_v1/10mm/prj_30mm_2_cluster_malignant_calc_size_10mm_1_full_0.7_25.raw.gz.raw.png)
 
 ### Results
 
-![image](calc_size/graphs/calc_size_graph_presentation.png)
+![image](../calc_size/graphs/calc_size_graph_presentation.png)
 
 |     mm^3               |                      |                     |                    |
 |------------------------|----------------------|---------------------|--------------------|
@@ -47,7 +47,7 @@ Tested calcification sized again of 3-9 voxels (mixed), 3-5 voxels (small), and 
 ### Data
 Image of breast phantom #1 with 10 mm sized cluster of 40 **large** calcifications.
 
-![image](calc_size/calc_size_v2/large/prj_30mm_2_cluster_malignant_calc_size_v2_p1_40_l_full_0.7_25.raw.gz.raw.png)
+![image](../calc_size/calc_size_v2/large/prj_30mm_2_cluster_malignant_calc_size_v2_p1_40_l_full_0.7_25.raw.gz.raw.png)
 
 ### Results
 Mean and Standard Deviation. p0-p5 are for the different breast phantom for different backgrounds. 
