@@ -108,7 +108,7 @@ We saw through our experiments that calcifications that were too bright would le
 
 ## Calcification Density (version 2)
 ### Description
-Experimented with the density setting in MC-GPU to see whether the brightness had an impact on the confidence score. The density values we tested were from 1.5 to 2.0 g/cm^3, and a lower density results in a dimmer image where the calcifications do not show up as bright. We used 10 different phantoms with 5 clusters placed in the same location (along the middle of the breast), but the individual calcification locations were different. The clusters were of 10 mm sized and 40 calcifications. The averages were based on 10 values in the same column across the 10 different breast phantoms. Images located [here](https://github.com/marianqian/cluster_generation_data/tree/master/calc_density/calc_density_v2). 
+Experimented with the density setting in MC-GPU to see whether the brightness had an impact on the confidence score. The density values we tested were from 1.5 to 2.0 g/cm^3, and a lower density results in a dimmer image where the calcifications do not show up as bright. We used 10 different phantoms with 15 clusters placed in the same location (in 3 rows by 5 columns), but the individual calcification locations were different. The clusters were of 10 mm sized and 40 calcifications. The averages were based on 10 values in the same 5 column across the 10 different breast phantoms **in the middle row**. Images located [here](https://github.com/marianqian/cluster_generation_data/tree/master/calc_density/calc_density_v2). 
 
 ### Specifications
 1. Calc size: varied between 3-9 voxels (mixed)   
@@ -191,7 +191,7 @@ Image from `cluster_location_v2`, contains the (10 mm, 30 calcs) left cluster an
 ![image](cluster_location/cluster_location_v2/prj_30mm_2_cluster_malignant_location_2_0_full_0.7_25.raw.gz.raw.png)
 
 ### Results
-![graph](cluster_location/cluster_location_graph_presentation.png)
+![graph](cluster_location/graphs/cluster_location_graph_presentation.png)
 
 | mm^3 (mixed)    | mean+std    |             |                    |
 |-----------------|-------------|-------------|--------------------|
@@ -220,7 +220,7 @@ Image for 10 mm cluster. Top row has 40 calcs, bottom row has 50 calcs. The orde
 
 ### Results
 
-![image](calc_size/calc_size_graph_presentation.png)
+![image](calc_size/graphs/calc_size_graph_presentation.png)
 
 |     mm^3               |                      |                     |                    |
 |------------------------|----------------------|---------------------|--------------------|
@@ -350,12 +350,21 @@ For CAD algorithm, tested simulated spiculated masses created by Nick Neirotti. 
 
 ### Data
 Simulated processed image.
+
 ![image](mass/inserted_mass_1.6_mcgpu_fredenberg.png) 
 
 CAD output 
+
 ![image](mass/CAD_inserted_mass_1.6_mcgpu_fredenberg.png) 
 
 The highest two lesions had very noticable spiculations. and the highest scoring mass was slightly deformed/irregularly shaped. This could lead to how having lesions that are not perfectly spheres could possibly increase the malignancy confidence score. 
+
+## Future steps
+For masses to see influence on confidence score:
+* Place masses in same location but in different phantoms.
+* Place masses in uniform phantom.
+* Populate phantom with perfect sphere masses.
+* Take masses and replicate them across a phantom so the only difference is the location. 
 
 # Future Steps
 Other factors that could influence malignancy confidence score:
@@ -363,11 +372,7 @@ Other factors that could influence malignancy confidence score:
 * Changing the pixel size on the detector. (If pixel size was larger, would that increase malignancy score?)
 * Changing preprocess values for the MC-GPU output images. (For these experiments, only used default (25th to 100th percentile, masked 400,000, took values greater than 0.7).
 
-For masses to see influence on confidence score:
-* Place masses in same location but in different phantoms.
-* Place masses in uniform phantom.
-* Populate phantom with perfect sphere masses.
-* Take masses and replicate them across a phantom so the only difference is the location. 
+
 
 # Other CAD outputs 
 ROI 
