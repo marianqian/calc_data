@@ -1,8 +1,3 @@
-### Description
-### Specifications
-### Data
-### Results
-
 # Results of Modeling Malignant and Benign Clusters 
 # Calcification Number and Cluster Size
 Changing the number of calcifications, size of cluster, and size of calcifications were parameters we focused on the most. These parameters are the parameters we saw had the most consistent confidence scores and effected the confidence scores more drastically. 
