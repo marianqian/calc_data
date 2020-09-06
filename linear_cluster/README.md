@@ -24,7 +24,7 @@ In each of these configurations, there were phantoms for the following: (10 mm, 
 ### Data
 Image of linear cluster of 10 mm and 20 calcs. The calcs were 3-7 voxel sized and had to be min 15 pixels and max 30 pixels away from the center line. 
 
-![image](linear_cluster/3-7_linear_15-30/prj_30mm_2_linear_cluster_142_20nm_1_full_0.7_25.raw.gz.raw.png)
+![image](../linear_cluster/3-7_linear_15-30/prj_30mm_2_linear_cluster_142_20nm_1_full_0.7_25.raw.gz.raw.png)
 
 ### Results
 
